@@ -1,5 +1,4 @@
-d7dull
+dummy_bitrix_module
 ======
 
-Модуль-заготовка для 1С-Битрикс.
-Использует подход ядра D7.
+Dummy module for 1C-bitrix
