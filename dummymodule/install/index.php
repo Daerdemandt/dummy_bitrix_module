@@ -1,4 +1,6 @@
 <?
+# /local/modules/<modulename>/install/index.php
+# Main file in installation of this component
 
 # TODO: use all text through GetMessage, to be language-indifferent
 # TODO: change class name (can it be done automatically?).
@@ -53,13 +55,13 @@ class dummymodule extends CModule
 		# TODO Shouldn't this be done with __DIR__?
 		# TODO: do not ignore results of CopyDirFiles
 		# Components:
-		CopyDirFiles($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/components',
+		CopyDirFiles(__DIR__ . '/components',
 			$_SERVER['DOCUMENT_ROOT'] . $this->COMPONENTS_INSTALLATION_FOLDER, true, true);
 		# Templates:
-		CopyDirFiles($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/templates',
+		CopyDirFiles(__DIR__ . '/templates',
 			$_SERVER['DOCUMENT_ROOT'] . $this->TEMPLATES_INSTALLATION_FOLDER, true, true);
 		# php_interface:
-		CopyDirFiles($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/' . $this->MODULE_ID . '/install/php_interface',
+		CopyDirFiles(__DIR__ . '/php_interface',
 			$_SERVER['DOCUMENT_ROOT'] . $this->PHP_INTERFACE_INSTALLATION_FOLDER, true, true);
 		return true;
 	}
