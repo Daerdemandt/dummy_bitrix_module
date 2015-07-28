@@ -1,9 +1,10 @@
 <?
 
 # TODO: use all text through GetMessage, to be language-indifferent
-# TODO: change class name (can it be done automatically?)
+# TODO: change class name (can it be done automatically?).
+# Note that class name must be similar to module name (more info at https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=3216 )
 
-Class test_module extends CModule
+class dummymodule extends CModule
 {
 	var $MODULE_ID; # Automatically set to be folder's name
 	var $MODULE_VERSION; # set in ./version.php
@@ -21,7 +22,9 @@ Class test_module extends CModule
 
 
 	function __construct() {
-		$this->MODULE_ID = end(explode('/', __DIR__)); # name of folder in .../modules/
+		$PathDivided = explode('/', __DIR__);
+		end($PathDivided);
+		$this->MODULE_ID = prev($PathDivided); # name of folder in .../modules/
 
 		$arModuleVersion = array();
 
