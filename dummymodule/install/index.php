@@ -45,7 +45,7 @@ class dummymodule extends CModule
 			$this->TEMPLATES_INSTALLATION_FOLDER = $this->INSTALLATION_FOLDER . '/templates';
 		}
 		if (!$this->PHP_INTERFACE_INSTALLATION_FOLDER) {
-			$this->PHP_INTERFACE_INSTALLATION_FOLDER = $this->INSTALLATION_FOLDER . '/templates';
+			$this->PHP_INTERFACE_INSTALLATION_FOLDER = $this->INSTALLATION_FOLDER . '/php_interface';
 		}
 	}
 
